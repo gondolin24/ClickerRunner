@@ -1,5 +1,6 @@
 package com.eduardo.com.clickerrunner;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
@@ -15,6 +16,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.eduardo.com.clickerrunner.controller.ProcessController;
+import com.eduardo.com.clickerrunner.loaders.SharedPreferenceController;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -110,8 +112,10 @@ public class MainActivity extends AppCompatActivity
     //MAJOR REFACTORING
     private void initializeShit() {
         //load stuff
+        SharedPreferences sp = getPreferences(MODE_PRIVATE);
+        SharedPreferenceController storage = new SharedPreferenceController(sp);
         TextView counterView = findViewById(R.id.mainCounter);
-        appController = new ProcessController(counterView);
+        appController = new ProcessController(counterView, storage);
     }
 
     public void onCounterClick(View v) {

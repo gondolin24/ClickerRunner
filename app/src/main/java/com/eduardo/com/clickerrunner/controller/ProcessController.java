@@ -2,22 +2,27 @@ package com.eduardo.com.clickerrunner.controller;
 
 import android.widget.TextView;
 
-import com.eduardo.com.clickerrunner.models.CounterMetrics;
+import com.eduardo.com.clickerrunner.loaders.SharedPreferenceController;
 
 
 public class ProcessController {
     private CounterController counterController;
     private TextView counterView;
+    private SharedPreferenceController storage;
 
-    public ProcessController(TextView counterView) {
-    counterController = new CounterController(new CounterMetrics());
+    public ProcessController(TextView counterView, SharedPreferenceController storage) {
+        this.storage = storage;
         this.counterView = counterView;
+        counterController = new CounterController(storage.loadSavedCounterMetrice());
+        this.counterView.setText(String.valueOf(counterController.getCounter()));
     }
 
     public void incrementCounter() {
 
         this.counterController.incrementCounter();
-        this.counterView.setText(String.valueOf(counterController.getCounter()));
+        int currentCounter = counterController.getCounter();
+        storage.saveCounter(currentCounter);
+        this.counterView.setText(String.valueOf(currentCounter));
 
     }
 
