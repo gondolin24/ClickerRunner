@@ -14,7 +14,7 @@ public class ProcessController {
         this.storage = storage;
         this.counterView = counterView;
         counterController = new CounterController(storage.loadSavedCounterMetrice());
-        this.counterView.setText(String.valueOf(counterController.getCounter()));
+        this.counterView.setText("counter "+String.valueOf(counterController.getCounter()));
     }
 
     public void incrementCounter() {
@@ -22,8 +22,10 @@ public class ProcessController {
         this.counterController.incrementCounter();
         int currentCounter = counterController.getCounter();
         storage.saveCounter(currentCounter);
-        this.counterView.setText(String.valueOf(currentCounter));
+        this.counterView.setText("counter "+String.valueOf(currentCounter));
 
     }
+
+
 
 }
