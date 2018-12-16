@@ -18,13 +18,13 @@ public class SharedPreferenceController {
 
     }
 
-    public int getCounter() {
+    public int getSavedCounter() {
         return store.getInt("counter", 0);
     }
 
-    public CounterMetrics loadSavedCounterMetrice() {
+    public CounterMetrics loadSavedCounterMetrics() {
         CounterMetrics current = new CounterMetrics();
-        current.setCounter(getCounter());
+        current.setCounter(getSavedCounter());
         return current;
     }
 

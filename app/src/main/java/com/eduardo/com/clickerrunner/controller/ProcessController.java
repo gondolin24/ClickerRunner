@@ -13,7 +13,7 @@ public class ProcessController {
     public ProcessController(TextView counterView, SharedPreferenceController storage) {
         this.storage = storage;
         this.counterView = counterView;
-        counterController = new CounterController(storage.loadSavedCounterMetrice());
+        counterController = new CounterController(storage.loadSavedCounterMetrics());
         this.counterView.setText("counter "+String.valueOf(counterController.getCounter()));
     }
 
