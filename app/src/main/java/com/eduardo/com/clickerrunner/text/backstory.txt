@@ -1,0 +1,36 @@
+
+Realm 1:
+- Boss
+ -> Mary
+
+Realm 2:
+- Boss
+ -> Rhino
+
+Realm 3:
+- Boss
+ -> Pippin
+
+Realm 4:
+- Boss
+ -> Sarah
+
+Realm 5:
+- Boss
+ -> Skippy
+
+5 Realms Bosses:
+-> Mary
+-> Rhino
+-> Pippin
+-> Sarah
+-> Skippy
+
+Goal Is to defeat them.
+
+
+Ability to farm worlds.
+As Each world provides a special resource resource.
+
+
+Skill Tree?
