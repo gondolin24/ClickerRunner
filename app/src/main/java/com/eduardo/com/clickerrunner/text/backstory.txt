@@ -33,4 +33,6 @@ Ability to farm worlds.
 As Each world provides a special resource resource.
 
 
+Bonus Attack?
+
 Skill Tree?

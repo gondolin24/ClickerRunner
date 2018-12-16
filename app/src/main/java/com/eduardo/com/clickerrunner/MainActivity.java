@@ -1,7 +1,9 @@
 package com.eduardo.com.clickerrunner;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
@@ -112,10 +114,14 @@ public class MainActivity extends AppCompatActivity
     //MAJOR REFACTORING
     private void initializeShit() {
         //load stuff
+        //virator
+        Vibrator sexyVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
+
+
         SharedPreferences sp = getPreferences(MODE_PRIVATE);
         SharedPreferenceController storage = new SharedPreferenceController(sp);
         TextView counterView = findViewById(R.id.mainCounter);
-        appController = new ProcessController(counterView, storage);
+        appController = new ProcessController(counterView, storage,sexyVibrator);
     }
 
     public void onCounterClick(View v) {
