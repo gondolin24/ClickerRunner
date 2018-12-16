@@ -5,7 +5,7 @@ import android.content.SharedPreferences;
 import com.eduardo.com.clickerrunner.models.CounterMetrics;
 
 public class SharedPreferenceController {
-    SharedPreferences store;
+    private SharedPreferences store;
 
     public SharedPreferenceController(SharedPreferences store) {
         this.store = store;
