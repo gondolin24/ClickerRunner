@@ -17,7 +17,7 @@ public class ProcessController {
         this.sexyVibrator = sexyVibrator;
         this.counterView = counterView;
         counterController = new CounterController(storage.loadSavedCounterMetrics());
-        this.counterView.setText("counter "+String.valueOf(counterController.getCounter()));
+        this.counterView.setText("counter " + String.valueOf(counterController.getCounter()));
     }
 
     public void incrementCounter() {
@@ -25,13 +25,11 @@ public class ProcessController {
         this.counterController.incrementCounter();
         int currentCounter = counterController.getCounter();
         storage.saveCounter(currentCounter);
-        this.counterView.setText("counter "+String.valueOf(currentCounter));
+        this.counterView.setText("counter " + String.valueOf(currentCounter));
 
     }
 
-
-
-    private void vibrate(){
+    private void vibrate() {
         //get vibrate  toggle/time from setting
         this.sexyVibrator.vibrate(400);
     }
