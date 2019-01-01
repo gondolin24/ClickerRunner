@@ -29,6 +29,8 @@
 
     <include layout="@layout/story" />
 
+    <include layout="@layout/stats" />
+
     <include layout="@layout/world_select" />
 
 

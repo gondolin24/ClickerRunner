@@ -22,7 +22,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Store"
+            android:text="Inventory"
             tools:layout_editor_absoluteX="174dp"
             tools:layout_editor_absoluteY="188dp" />
     </LinearLayout>

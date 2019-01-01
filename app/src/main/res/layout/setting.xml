@@ -7,7 +7,7 @@
     android:id="@+id/settingsView"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:context=".MainActivity"
-    android:visibility="invisible"
+    android:visibility="gone"
     tools:showIn="@layout/app_bar_main">
 
 
