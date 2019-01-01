@@ -17,6 +17,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
+import com.eduardo.com.clickerrunner.controller.LayoutController;
 import com.eduardo.com.clickerrunner.controller.ProcessController;
 import com.eduardo.com.clickerrunner.loaders.SharedPreferenceController;
 
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
     private ProcessController appController;
+    private LayoutController layoutController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,8 +52,6 @@ public class MainActivity extends AppCompatActivity
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
         initializeShit();
-
-
     }
 
     @Override
@@ -93,16 +93,12 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_camera) {
-            // Handle the camera action
+            layoutController.displayStore();
         } else if (id == R.id.nav_gallery) {
 
         } else if (id == R.id.nav_slideshow) {
 
         } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
 
         }
 
@@ -113,19 +109,25 @@ public class MainActivity extends AppCompatActivity
 
     //MAJOR REFACTORING
     private void initializeShit() {
-        //load stuff
-        //virator
         Vibrator sexyVibrator = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
-
-
         SharedPreferences sp = getPreferences(MODE_PRIVATE);
         SharedPreferenceController storage = new SharedPreferenceController(sp);
         TextView counterView = findViewById(R.id.mainCounter);
-        appController = new ProcessController(counterView, storage,sexyVibrator);
+        appController = new ProcessController(counterView, storage, sexyVibrator);
+    }
+
+    public void initializeLayoutController() {
+        View store = findViewById(R.id.inventoryView);
+        View worldView = findViewById(R.id.worldView)
+        View story = findViewById(R.id.storyView);
+        View mainGame = findViewById(R.id.mainView);
+        View settingView = findViewById(R.id.settingsView);
+        layoutController = new LayoutController(store, worldView,story,mainGame,settingView);
     }
 
     public void onCounterClick(View v) {
         this.appController.incrementCounter();
     }
+
 
 }
